@@ -43,10 +43,12 @@ class _RegisterState extends State<Register> {
                 ],
               ),
 
-              // second column
+              // column2
 
               // Spacer(),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -56,17 +58,18 @@ class _RegisterState extends State<Register> {
                       Text(
                         'Welcome',
                         style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontFamily: 'Poppins-Regular',
-                            fontSize: 30 , fontWeight: FontWeight.w400,
-                            ),
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
-              
-               // Third column
+
+              // column3
 
               // SizedBox(height: 10,),
               Column(
@@ -77,11 +80,58 @@ class _RegisterState extends State<Register> {
                       Text(
                         'Join the community!',
                         style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontFamily: 'Poppins-Regular',
-                            fontSize: 30 , fontWeight: FontWeight.w400,
-                            ),
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
+                    ],
+                  ),
+                ],
+              ),
+
+              // column4 => Text fields
+              SizedBox(
+                height: 70,
+              ),
+
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
+
+                      // container 1
+
+                      Container(
+                        height: 71,
+                        width: 360,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Color.fromRGBO(93, 93, 103, 1),
+                          ),
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Enter your full name',
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(143, 143, 158, 1),
+                                fontFamily: 'Poppins-Regular',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 20.0,
+                            ),
+                          ),
+                          style: TextStyle(
+                            color: Color.fromRGBO(143, 143, 158, 1),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                 ],
