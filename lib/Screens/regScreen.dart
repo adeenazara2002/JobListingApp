@@ -105,8 +105,8 @@ class _RegisterState extends State<Register> {
                       // container 1
 
                       Container(
-                        height: 71,
-                        width: 360,
+                        height: 75,
+                        width: 400,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
@@ -136,9 +136,104 @@ class _RegisterState extends State<Register> {
                   ),
                 ],
               ),
+
+              // column5 => Text fields
+              SizedBox(
+                height: 25,
+              ),
+
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
+
+                      // container 2
+
+                      Container(
+                        height: 75,
+                        width: 400,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Color.fromRGBO(93, 93, 103, 1),
+                          ),
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Enter your email address',
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(143, 143, 158, 1),
+                                fontFamily: 'Poppins-Regular',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 20.0,
+                            ),
+                          ),
+                          style: TextStyle(
+                            color: Color.fromRGBO(143, 143, 158, 1),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+
+              
+              // column6 => Text fields
+              SizedBox(
+                height: 25,
+              ),
+
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
+
+                      // container 3
+
+                      Container(
+                        height: 75,
+                        width: 400,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Color.fromRGBO(93, 93, 103, 1),
+                          ),
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: 'Enter your password',
+                            hintStyle: TextStyle(
+                                color: Color.fromRGBO(143, 143, 158, 1),
+                                fontFamily: 'Poppins-Regular',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 20.0,
+                            ),
+                          ),
+                          style: TextStyle(
+                            color: Color.fromRGBO(143, 143, 158, 1),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+
             ],
           ),
-        )),
+        )
+        ),
       ),
     );
   }
