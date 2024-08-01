@@ -77,17 +77,19 @@ class _JobState extends State<Job> {
               ),
 
               // column3
-
+            
+            SizedBox(height: 10,),
               Column(
                 children: [
                   Row(
                     children: [
+                     
                       Padding(padding: EdgeInsets.only(left: 27)),
 
                       // container 3
 
                       Container(
-                        height: 75,
+                        height: 70,
                         width: 400,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -96,8 +98,12 @@ class _JobState extends State<Job> {
                           ),
                         ),
                         child: TextField(
+                          
                           decoration: InputDecoration(
-                            hintText: 'Enter your password',
+                            prefixIcon: Icon(Icons.search , 
+                            color: Color.fromRGBO(93, 93, 103, 1),
+                            size: 30,),
+                            hintText: 'Search keywords..',
                             hintStyle: TextStyle(
                                 color: Color.fromRGBO(143, 143, 158, 1),
                                 fontFamily: 'Poppins-Regular',
