@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class Login extends StatefulWidget {
+  const Login({super.key});
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<Login> createState() => _LoginState();
 }
 
-class _RegisterState extends State<Register> {
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,7 @@ class _RegisterState extends State<Register> {
                     children: [
                       Padding(padding: EdgeInsets.only(left: 27)),
                       Text(
-                        'Welcome',
+                        'Welcome back',
                         style: TextStyle(
                           color: Color.fromRGBO(255, 255, 255, 1),
                           fontFamily: 'Poppins-Regular',
@@ -78,7 +78,7 @@ class _RegisterState extends State<Register> {
                     children: [
                       Padding(padding: EdgeInsets.only(left: 27)),
                       Text(
-                        'Join the community!',
+                        'you\'ve been missed!',
                         style: TextStyle(
                           color: Color.fromRGBO(255, 255, 255, 1),
                           fontFamily: 'Poppins-Regular',
@@ -115,7 +115,7 @@ class _RegisterState extends State<Register> {
                         ),
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Enter your full name',
+                            hintText: 'Enter your email address',
                             hintStyle: TextStyle(
                                 color: Color.fromRGBO(143, 143, 158, 1),
                                 fontFamily: 'Poppins-Regular',
@@ -161,52 +161,6 @@ class _RegisterState extends State<Register> {
                         ),
                         child: TextField(
                           decoration: InputDecoration(
-                            hintText: 'Enter your email address',
-                            hintStyle: TextStyle(
-                                color: Color.fromRGBO(143, 143, 158, 1),
-                                fontFamily: 'Poppins-Regular',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 20.0,
-                              horizontal: 20.0,
-                            ),
-                          ),
-                          style: TextStyle(
-                            color: Color.fromRGBO(143, 143, 158, 1),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-
-              // column6 => Text fields
-              SizedBox(
-                height: 25,
-              ),
-
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(padding: EdgeInsets.only(left: 27)),
-
-                      // container 3
-
-                      Container(
-                        height: 75,
-                        width: 400,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: Color.fromRGBO(93, 93, 103, 1),
-                          ),
-                        ),
-                        child: TextField(
-                          decoration: InputDecoration(
                             hintText: 'Enter your password',
                             hintStyle: TextStyle(
                                 color: Color.fromRGBO(143, 143, 158, 1),
@@ -229,9 +183,10 @@ class _RegisterState extends State<Register> {
                 ],
               ),
 
+              
               // column 7
               SizedBox(
-                height: 170,
+                height: 270,
               ),
               Column(
                 children: [
@@ -239,7 +194,7 @@ class _RegisterState extends State<Register> {
                     children: [
                       Padding(padding: EdgeInsets.only(left: 100)),
                       Text(
-                        'Already have an account?',
+                        'Don\'t have an account?',
                         style: TextStyle(
                           color: Color.fromRGBO(143, 143, 158, 1),
                           fontFamily: 'Poppins-Regular',
@@ -252,7 +207,7 @@ class _RegisterState extends State<Register> {
                       Padding(padding: EdgeInsets.only(left: 10)),
 
                       Text(
-                        'Sign In',
+                        'Register',
                         style: TextStyle(
                           color: Color.fromRGBO(255, 255, 255, 1),
                           fontFamily: 'Poppins-Regular',
@@ -287,7 +242,7 @@ class _RegisterState extends State<Register> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 150.0, vertical: 27.0),
                           child: Text(
-                            'Sign Up',
+                            'Sign In',
                             style: TextStyle(
                                 fontSize: 15.0,
                                 fontFamily: 'Poppins-Regular',
