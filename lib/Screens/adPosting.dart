@@ -160,6 +160,42 @@ SizedBox(height: 30),
                   ],
                 ),
 
+                // column 4
+
+                SizedBox(
+                height: 200,
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+                          foregroundColor: Color.fromRGBO(25, 23, 32, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 135.0, vertical: 27.0),
+                          child: Text(
+                            'Submit Job',
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                fontFamily: 'Poppins-Regular',
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
                          
             ],
           ),
