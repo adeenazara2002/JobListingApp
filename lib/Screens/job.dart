@@ -45,10 +45,6 @@ class _JobState extends State<Job> {
 
               // column2
 
-              // Spacer(),
-              // SizedBox(
-              //   height: 10,
-              // ),
               Column(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -60,8 +56,19 @@ class _JobState extends State<Job> {
                         style: TextStyle(
                           color: Color.fromRGBO(255, 255, 255, 1),
                           fontFamily: 'Poppins-Regular',
-                          fontSize: 30,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+
+                      // icon
+
+                      Container(
+                        padding: EdgeInsets.only(left: 220, bottom: 20),
+                        child: Icon(
+                          Icons.arrow_circle_left_outlined,
+                          color: Colors.white,
+                          size: 40,
                         ),
                       ),
                     ],
@@ -71,84 +78,13 @@ class _JobState extends State<Job> {
 
               // column3
 
-              // SizedBox(height: 10,),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(padding: EdgeInsets.only(left: 27)),
-                      Text(
-                        'you\'ve been missed!',
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontFamily: 'Poppins-Regular',
-                          fontSize: 30,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-              // column4 => Text fields
-              SizedBox(
-                height: 70,
-              ),
-
               Column(
                 children: [
                   Row(
                     children: [
                       Padding(padding: EdgeInsets.only(left: 27)),
 
-                      // container 1
-
-                      Container(
-                        height: 75,
-                        width: 400,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                            color: Color.fromRGBO(93, 93, 103, 1),
-                          ),
-                        ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Enter your email address',
-                            hintStyle: TextStyle(
-                                color: Color.fromRGBO(143, 143, 158, 1),
-                                fontFamily: 'Poppins-Regular',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400),
-                            border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
-                              vertical: 20.0,
-                              horizontal: 20.0,
-                            ),
-                          ),
-                          style: TextStyle(
-                            color: Color.fromRGBO(143, 143, 158, 1),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-
-              // column5 => Text fields
-              SizedBox(
-                height: 25,
-              ),
-
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(padding: EdgeInsets.only(left: 27)),
-
-                      // container 2
+                      // container 3
 
                       Container(
                         height: 75,
@@ -183,77 +119,6 @@ class _JobState extends State<Job> {
                 ],
               ),
 
-              
-              // column 7
-              SizedBox(
-                height: 270,
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(padding: EdgeInsets.only(left: 100)),
-                      Text(
-                        'Don\'t have an account?',
-                        style: TextStyle(
-                          color: Color.fromRGBO(143, 143, 158, 1),
-                          fontFamily: 'Poppins-Regular',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-
-                      // another text
-                      Padding(padding: EdgeInsets.only(left: 10)),
-
-                      Text(
-                        'Register',
-                        style: TextStyle(
-                          color: Color.fromRGBO(255, 255, 255, 1),
-                          fontFamily: 'Poppins-Regular',
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-
-              // column 8
-              SizedBox(
-                height: 20,
-              ),
-              Column(
-                children: [
-                  Row(
-                    children: [
-                      Padding(padding: EdgeInsets.only(left: 27)),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-                          foregroundColor: Color.fromRGBO(25, 23, 32, 1),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15.0),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 150.0, vertical: 27.0),
-                          child: Text(
-                            'Sign In',
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                fontFamily: 'Poppins-Regular',
-                                fontWeight: FontWeight.w800),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
             ],
           ),
         )),
