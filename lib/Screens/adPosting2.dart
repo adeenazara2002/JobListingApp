@@ -22,147 +22,145 @@ class _EditState extends State<Edit> {
             children: [
               Column(
                 children: [
-                        Padding(padding: EdgeInsets.only(top: 70 ,)),
-
+                  Padding(
+                      padding: EdgeInsets.only(
+                    top: 70,
+                  )),
                   Row(
-                      // mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 15 ,)),
-                        Column(
-                          children: [
-                            Row(
-                              children: [
-                        // Padding(padding: EdgeInsets.only(top: 240)),
-                  
-                                Icon(
-                                    Icons.arrow_back_ios_sharp,
-                                    color: Color.fromRGBO(255, 255, 255, 1),
-                                    size: 30,
-                                  ),
-                                // Spacer(),
-                                Padding(padding: EdgeInsets.only(top: 100)),
-                                SizedBox(
-                                  width: 30,
+                    // mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                          padding: EdgeInsets.only(
+                        left: 15,
+                      )),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              // Padding(padding: EdgeInsets.only(top: 240)),
+
+                              Icon(
+                                Icons.arrow_back_ios_sharp,
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                                size: 30,
+                              ),
+                              // Spacer(),
+                              Padding(padding: EdgeInsets.only(top: 100)),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              Text(
+                                'Edit Job',
+                                style: TextStyle(
+                                  color: Color.fromRGBO(255, 255, 255, 1),
+                                  fontFamily: 'Poppins-Bold',
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.w700,
                                 ),
-                                Text(
-                                  'Edit Job',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(255, 255, 255, 1),
-                                    fontFamily: 'Poppins-Bold',
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
 
               // column2
 
-          
+              // SizedBox(height: 10),
+              Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
 
-                // SizedBox(height: 10),
-                Column(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                      // container 1
 
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 27)),
-
-                        // container 1
-
-                        Container(
-                          height: 70,
-                          width: 400,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Color.fromRGBO(93, 93, 103, 1),
-                            ),
+                      Container(
+                        height: 70,
+                        width: 400,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Color.fromRGBO(93, 93, 103, 1),
                           ),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              
-                              hintText: '',
-                              hintStyle: TextStyle(
-                                color: Color.fromRGBO(143, 143, 158, 1),
-                                fontFamily: 'Poppins-Regular',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(
-                                vertical: 20.0,
-                                horizontal: 20.0,
-                              ),
-                            ),
-                            style: TextStyle(
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: '',
+                            hintStyle: TextStyle(
                               color: Color.fromRGBO(143, 143, 158, 1),
+                              fontFamily: 'Poppins-Regular',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 20.0,
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-
- // column3
-
-          
-SizedBox(height: 30),
-                Column(
-                  children: [
-
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 27)),
-
-                        // container 2
-
-                        Container(
-                          height: 350,
-                          width: 400,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Color.fromRGBO(93, 93, 103, 1),
-                            ),
+                          style: TextStyle(
+                            color: Color.fromRGBO(143, 143, 158, 1),
                           ),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              
-                              hintText: '',
-                              hintStyle: TextStyle(
-                                color: Color.fromRGBO(143, 143, 158, 1),
-                                fontFamily: 'Poppins-Regular',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(
-                                vertical: 20.0,
-                                horizontal: 20.0,
-                              ),
-                            ),
-                            style: TextStyle(
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+
+              // column3
+
+              SizedBox(height: 30),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
+
+                      // container 2
+
+                      Container(
+                        height: 350,
+                        width: 400,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Color.fromRGBO(93, 93, 103, 1),
+                          ),
+                        ),
+                        child: TextField(
+                          decoration: InputDecoration(
+                            hintText: '',
+                            hintStyle: TextStyle(
                               color: Color.fromRGBO(143, 143, 158, 1),
+                              fontFamily: 'Poppins-Regular',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            border: InputBorder.none,
+                            contentPadding: EdgeInsets.symmetric(
+                              vertical: 20.0,
+                              horizontal: 20.0,
                             ),
                           ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+                          style: TextStyle(
+                            color: Color.fromRGBO(143, 143, 158, 1),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
 
-                // column 4
+              // column 4
 
-                SizedBox(
+              SizedBox(
                 height: 200,
               ),
               Column(
@@ -195,12 +193,9 @@ SizedBox(height: 30),
                   ),
                 ],
               ),
-
-                         
             ],
           ),
-        )
-        ),
+        )),
       ),
     );
   }
