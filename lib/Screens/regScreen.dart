@@ -183,7 +183,6 @@ class _RegisterState extends State<Register> {
                 ],
               ),
 
-              
               // column6 => Text fields
               SizedBox(
                 height: 25,
@@ -230,10 +229,79 @@ class _RegisterState extends State<Register> {
                 ],
               ),
 
+              // column 7
+              SizedBox(
+                height: 170,
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 100)),
+                      Text(
+                        'Already have an account?',
+                        style: TextStyle(
+                          color: Color.fromRGBO(143, 143, 158, 1),
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 15,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+
+                      // another text
+                      Padding(padding: EdgeInsets.only(left: 10)),
+
+                      Text(
+                        'Sign In',
+                        style: TextStyle(
+                          color: Color.fromRGBO(255, 255, 255, 1),
+                          fontFamily: 'Poppins-Regular',
+                          fontSize: 15,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              // column 8
+              SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 27)),
+                      ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+                          foregroundColor: Color.fromRGBO(25, 23, 32, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
+                          ),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 150.0, vertical: 27.0),
+                          child: Text(
+                            'Sign Up',
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                fontFamily: 'Poppins-Regular',
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ],
           ),
-        )
-        ),
+        )),
       ),
     );
   }
