@@ -202,10 +202,32 @@ class _JobState extends State<Job> {
                 ),
 
                 // column5
+
+                // column2
+
+                
               ],
             ),
           ),
         ),
+        
+      ),
+      floatingActionButton: Container(
+        
+                        height: 90,
+                        width: 90,
+                        decoration: BoxDecoration(
+                          color: Color.fromRGBO(229, 229, 229, 1),
+                          borderRadius: BorderRadius.circular(50),
+                          border: Border.all(
+                            color: Color.fromRGBO(229, 229, 229, 1),
+                          ),
+                        ),
+                      child: FloatingActionButton(onPressed: (){},
+                      
+                      backgroundColor: Color.fromRGBO(229, 229, 229, 1),
+                      shape: CircleBorder(),
+                      child: Icon(Icons.add_sharp , size: 40, color: Color.fromRGBO(25, 23, 32, 1),),),
       ),
     );
   }
