@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/regScreen.dart';
 import 'package:joblistingapp/Screens/loginScreen.dart';
+import 'package:joblistingapp/Screens/job.dart';
+
 
 
 void main(){
@@ -14,7 +16,7 @@ class JobListing extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: Job(),
     );
   }
 }
