@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:joblistingapp/Screens/adPosting.dart';
 
 class Job extends StatefulWidget {
   const Job({super.key});
@@ -43,9 +44,7 @@ class _JobState extends State<Job> {
                     ),
                   ],
                 ),
-
                 // column2
-
                 Column(
                   // crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -61,11 +60,9 @@ class _JobState extends State<Job> {
                             fontWeight: FontWeight.w300,
                           ),
                         ),
-
                         // icon
-
                         Container(
-                          padding: EdgeInsets.only(left: 220, bottom: 20),
+                          padding: EdgeInsets.only(left: 130, bottom: 20),
                           child: Icon(
                             Icons.arrow_circle_left_outlined,
                             color: Colors.white,
@@ -76,21 +73,17 @@ class _JobState extends State<Job> {
                     ),
                   ],
                 ),
-
                 // column3
-
                 SizedBox(height: 10),
                 Column(
                   children: [
                     Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
-
                         // container 3
-
                         Container(
                           height: 70,
-                          width: 400,
+                          width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
@@ -126,21 +119,17 @@ class _JobState extends State<Job> {
                     ),
                   ],
                 ),
-
                 // column4
-
                 SizedBox(height: 25),
                 Column(
                   children: [
                     Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
-
                         // container 3
-
                         Container(
                           height: 100,
-                          width: 400,
+                          width: 310,
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(32, 30, 39, 1),
                             borderRadius: BorderRadius.circular(12),
@@ -201,9 +190,7 @@ class _JobState extends State<Job> {
                     ),
                   ],
                 ),
-
                 // column5
-
                 // column2
               ],
             ),
@@ -221,7 +208,12 @@ class _JobState extends State<Job> {
           ),
         ),
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AdPosting()),
+            );
+          },
           backgroundColor: Color.fromRGBO(229, 229, 229, 1),
           shape: CircleBorder(),
           child: Icon(

@@ -81,7 +81,7 @@ class _EditState extends State<Edit> {
 
                       Container(
                         height: 70,
-                        width: 400,
+                        width: 310,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
@@ -126,7 +126,7 @@ class _EditState extends State<Edit> {
 
                       Container(
                         height: 350,
-                        width: 400,
+                        width: 310,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
@@ -167,7 +167,7 @@ class _EditState extends State<Edit> {
                 children: [
                   Row(
                     children: [
-                      Padding(padding: EdgeInsets.only(left: 27)),
+                      Padding(padding: EdgeInsets.only(left: 27 , bottom: 100)),
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
@@ -179,7 +179,7 @@ class _EditState extends State<Edit> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 135.0, vertical: 27.0),
+                              horizontal: 90.0, vertical: 27.0),
                           child: Text(
                             'Update Job',
                             style: TextStyle(
