@@ -150,7 +150,8 @@ class _AdPostingState extends State<AdPosting> {
                   children: [
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 27, bottom: 100)),
+                        Padding(
+                            padding: EdgeInsets.only(left: 27, bottom: 100)),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(

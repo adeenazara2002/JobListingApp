@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/job.dart';
-import 'package:joblistingapp/Screens/loginScreen.dart'; 
+import 'package:joblistingapp/Screens/loginScreen.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -26,7 +26,7 @@ class _RegisterState extends State<Register> {
                     Padding(padding: EdgeInsets.only(left: 25)),
                     Column(
                       children: [
-                        Padding(padding: EdgeInsets.only(top: 110)),
+                        Padding(padding: EdgeInsets.only(top: 80)),
                         SizedBox(
                           width: 120,
                         ),
@@ -43,9 +43,9 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 10,
-                ),
+                // SizedBox(
+                //   height: 10,
+                // ),
                 Column(
                   children: [
                     Row(
@@ -66,8 +66,10 @@ class _RegisterState extends State<Register> {
                 ),
                 Column(
                   children: [
+                  
                     Row(
                       children: [
+                        
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Text(
                           'Join the community!',
@@ -83,7 +85,7 @@ class _RegisterState extends State<Register> {
                   ],
                 ),
                 SizedBox(
-                  height: 70,
+                  height: 50,
                 ),
                 Column(
                   children: [
@@ -91,8 +93,8 @@ class _RegisterState extends State<Register> {
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Container(
-                          height: 70,
-                          width: 320,
+                          height: 68,
+                          width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
@@ -124,7 +126,7 @@ class _RegisterState extends State<Register> {
                   ],
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 Column(
                   children: [
@@ -132,8 +134,8 @@ class _RegisterState extends State<Register> {
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Container(
-                          height: 70,
-                          width: 320,
+                          height: 68,
+                          width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
@@ -165,7 +167,7 @@ class _RegisterState extends State<Register> {
                   ],
                 ),
                 SizedBox(
-                  height: 25,
+                  height: 20,
                 ),
                 Column(
                   children: [
@@ -173,8 +175,8 @@ class _RegisterState extends State<Register> {
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Container(
-                          height: 70,
-                          width: 320,
+                          height: 68,
+                          width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
@@ -206,7 +208,7 @@ class _RegisterState extends State<Register> {
                   ],
                 ),
                 SizedBox(
-                  height: 170,
+                  height: 130,
                 ),
                 Column(
                   children: [
@@ -246,12 +248,12 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
-                
                 Column(
                   children: [
                     Row(
                       children: [
-                        Padding(padding: EdgeInsets.only(left: 27 , bottom: 100)),
+                        Padding(
+                            padding: EdgeInsets.only(left: 27, bottom: 100)),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
@@ -271,7 +273,7 @@ class _RegisterState extends State<Register> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 105.0,
-                              vertical: 27.0,
+                              vertical: 20.0,
                             ),
                             child: Text(
                               'Sign Up',
