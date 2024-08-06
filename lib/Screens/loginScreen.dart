@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/job.dart';
+import 'package:joblistingapp/Screens/regScreen.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -191,7 +192,16 @@ class _LoginState extends State<Login> {
                           ),
                           // another text
                           Padding(padding: EdgeInsets.only(left: 10)),
-                          Text(
+                          GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Register(),
+                              ),
+                            );
+                          },
+                          child: Text(
                             'Register',
                             style: TextStyle(
                               color: Color.fromRGBO(255, 255, 255, 1),
@@ -200,6 +210,7 @@ class _LoginState extends State<Login> {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
+                        ),
                         ],
                       ),
                     ],
