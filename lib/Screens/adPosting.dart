@@ -44,7 +44,7 @@ class _AdPostingState extends State<AdPosting> {
                                   size: 30,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(top: 100),
+                                  padding: EdgeInsets.only(top: 80),
                                 ),
                                 SizedBox(
                                   width: 30,
@@ -72,7 +72,7 @@ class _AdPostingState extends State<AdPosting> {
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Container(
-                          height: 70,
+                          height: 68,
                           width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
@@ -104,14 +104,14 @@ class _AdPostingState extends State<AdPosting> {
                     ),
                   ],
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: 20),
                 Column(
                   children: [
                     Row(
                       children: [
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Container(
-                          height: 350,
+                          height: 300,
                           width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
@@ -144,7 +144,7 @@ class _AdPostingState extends State<AdPosting> {
                   ],
                 ),
                 SizedBox(
-                  height: 200,
+                  height: 120,
                 ),
                 Column(
                   children: [
@@ -171,7 +171,7 @@ class _AdPostingState extends State<AdPosting> {
                           child: Padding(
                             padding: const EdgeInsets.symmetric(
                               horizontal: 90.0,
-                              vertical: 27.0,
+                              vertical: 20.0,
                             ),
                             child: Text(
                               'Submit Job',

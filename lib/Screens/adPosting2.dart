@@ -45,7 +45,7 @@ class _EditState extends State<Edit> {
                                 size: 30,
                               ),
                               // Spacer(),
-                              Padding(padding: EdgeInsets.only(top: 100)),
+                              Padding(padding: EdgeInsets.only(top: 80)),
                               SizedBox(
                                 width: 30,
                               ),
@@ -80,7 +80,7 @@ class _EditState extends State<Edit> {
                       // container 1
 
                       Container(
-                        height: 70,
+                        height: 68,
                         width: 310,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -115,7 +115,7 @@ class _EditState extends State<Edit> {
 
               // column3
 
-              SizedBox(height: 30),
+              SizedBox(height: 20),
               Column(
                 children: [
                   Row(
@@ -125,7 +125,7 @@ class _EditState extends State<Edit> {
                       // container 2
 
                       Container(
-                        height: 350,
+                        height: 300,
                         width: 310,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
@@ -161,7 +161,7 @@ class _EditState extends State<Edit> {
               // column 4
 
               SizedBox(
-                height: 200,
+                height: 120,
               ),
               Column(
                 children: [
@@ -179,7 +179,7 @@ class _EditState extends State<Edit> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 90.0, vertical: 27.0),
+                              horizontal: 90.0, vertical: 20.0),
                           child: Text(
                             'Update Job',
                             style: TextStyle(

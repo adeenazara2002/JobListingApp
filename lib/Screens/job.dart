@@ -27,7 +27,7 @@ class _JobState extends State<Job> {
                     Column(
                       children: [
                         // Spacer(),
-                        Padding(padding: EdgeInsets.only(top: 90)),
+                        Padding(padding: EdgeInsets.only(top: 80)),
                         SizedBox(
                           width: 80,
                         ),
@@ -62,11 +62,11 @@ class _JobState extends State<Job> {
                         ),
                         // icon
                         Container(
-                          padding: EdgeInsets.only(left: 130, bottom: 20),
+                          padding: EdgeInsets.only(left: 130,),
                           child: Icon(
                             Icons.arrow_circle_left_outlined,
                             color: Colors.white,
-                            size: 40,
+                            size: 30,
                           ),
                         ),
                       ],
@@ -74,7 +74,7 @@ class _JobState extends State<Job> {
                   ],
                 ),
                 // column3
-                SizedBox(height: 10),
+                SizedBox(height: 20),
                 Column(
                   children: [
                     Row(
@@ -82,7 +82,7 @@ class _JobState extends State<Job> {
                         Padding(padding: EdgeInsets.only(left: 27)),
                         // container 3
                         Container(
-                          height: 70,
+                          height: 68,
                           width: 310,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
@@ -157,16 +157,18 @@ class _JobState extends State<Job> {
                                     ),
                                     Row(
                                       children: [
+                                        Padding(padding: EdgeInsets.only(left: 20)),
                                         Icon(
                                           Icons.edit_note_outlined,
                                           color: Colors.white,
-                                          size: 40,
+                                          size: 30,
                                         ),
-                                        SizedBox(width: 10),
+                                        Padding(padding: EdgeInsets.only(left: 10)),
+                                        
                                         Icon(
                                           Icons.delete_outline_outlined,
                                           color: Color.fromRGBO(255, 89, 89, 1),
-                                          size: 40,
+                                          size: 30,
                                         ),
                                       ],
                                     ),
@@ -198,8 +200,8 @@ class _JobState extends State<Job> {
         ),
       ),
       floatingActionButton: Container(
-        height: 90,
-        width: 90,
+        height: 70,
+        width: 70,
         decoration: BoxDecoration(
           color: Color.fromRGBO(229, 229, 229, 1),
           borderRadius: BorderRadius.circular(50),
@@ -218,7 +220,7 @@ class _JobState extends State<Job> {
           shape: CircleBorder(),
           child: Icon(
             Icons.add_sharp,
-            size: 40,
+            size: 30,
             color: Color.fromRGBO(25, 23, 32, 1),
           ),
         ),
