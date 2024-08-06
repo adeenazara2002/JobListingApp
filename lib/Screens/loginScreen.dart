@@ -27,7 +27,7 @@ class _LoginState extends State<Login> {
                       Column(
                         children: [
                           // Spacer(),
-                          Padding(padding: EdgeInsets.only(top: 110)),
+                          Padding(padding: EdgeInsets.only(top: 80)),
                           SizedBox(
                             width: 120,
                           ),
@@ -46,9 +46,7 @@ class _LoginState extends State<Login> {
                   ),
                   // column2
                   // Spacer(),
-                  SizedBox(
-                    height: 10,
-                  ),
+                  
                   Column(
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -90,7 +88,7 @@ class _LoginState extends State<Login> {
                   ),
                   // column4 => Text fields
                   SizedBox(
-                    height: 70,
+                    height: 50,
                   ),
                   Column(
                     children: [
@@ -99,8 +97,8 @@ class _LoginState extends State<Login> {
                           Padding(padding: EdgeInsets.only(left: 27)),
                           // container 1
                           Container(
-                            height: 70,
-                            width: 320,
+                            height: 68,
+                            width: 310,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
@@ -133,7 +131,7 @@ class _LoginState extends State<Login> {
                   ),
                   // column5 => Text fields
                   SizedBox(
-                    height: 25,
+                    height: 20,
                   ),
                   Column(
                     children: [
@@ -142,8 +140,8 @@ class _LoginState extends State<Login> {
                           Padding(padding: EdgeInsets.only(left: 27)),
                           // container 2
                           Container(
-                            height: 70,
-                            width: 320,
+                            height: 68,
+                            width: 310,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
@@ -175,7 +173,7 @@ class _LoginState extends State<Login> {
                   ),
                   // column 7
                   SizedBox(
-                    height: 270,
+                    height: 220,
                   ),
                   Column(
                     children: [
@@ -233,8 +231,8 @@ class _LoginState extends State<Login> {
                             ),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(
-                                horizontal: 110.0,
-                                vertical: 27.0,
+                                horizontal: 105.0,
+                                vertical: 20.0,
                               ),
                               child: Text(
                                 'Sign In',
