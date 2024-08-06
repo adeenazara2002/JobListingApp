@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/adPosting2.dart';
+import 'package:joblistingapp/Screens/job.dart';
 
 class AdPosting extends StatefulWidget {
   const AdPosting({super.key});
@@ -38,10 +39,20 @@ class _AdPostingState extends State<AdPosting> {
                           children: [
                             Row(
                               children: [
-                                Icon(
-                                  Icons.arrow_back_ios_sharp,
-                                  color: Color.fromRGBO(255, 255, 255, 1),
-                                  size: 30,
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Job(),
+                                      ),
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_sharp,
+                                    color: Color.fromRGBO(255, 255, 255, 1),
+                                    size: 30,
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(top: 80),

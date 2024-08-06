@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:joblistingapp/Screens/adPosting.dart';
 
 class Edit extends StatefulWidget {
   const Edit({super.key});
@@ -37,13 +38,21 @@ class _EditState extends State<Edit> {
                         children: [
                           Row(
                             children: [
-                              // Padding(padding: EdgeInsets.only(top: 240)),
-
-                              Icon(
-                                Icons.arrow_back_ios_sharp,
-                                color: Color.fromRGBO(255, 255, 255, 1),
-                                size: 30,
-                              ),
+                              InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => AdPosting(),
+                                      ),
+                                    );
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_back_ios_sharp,
+                                    color: Color.fromRGBO(255, 255, 255, 1),
+                                    size: 30,
+                                  ),
+                                ),
                               // Spacer(),
                               Padding(padding: EdgeInsets.only(top: 80)),
                               SizedBox(
