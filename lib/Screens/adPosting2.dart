@@ -14,8 +14,8 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
         color: Color.fromRGBO(25, 23, 32, 1),
         child: Scrollbar(
             child: SingleChildScrollView(

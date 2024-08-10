@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/job.dart';
 import 'package:joblistingapp/Screens/regScreen.dart';
+import 'package:joblistingapp/models/regUser.dart';
 
 class Login extends StatefulWidget {
-  const Login({super.key});
+  final List<User> registeredUsers;
+
+  const Login({super.key , required this.registeredUsers});
 
   @override
   State<Login> createState() => _LoginState();
@@ -11,11 +14,16 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   @override
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  String? errorMessage;
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          height: double.infinity,
-          width: double.infinity,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
           color: Color.fromRGBO(25, 23, 32, 1),
           child: Scrollbar(
             child: SingleChildScrollView(
@@ -47,7 +55,7 @@ class _LoginState extends State<Login> {
                   ),
                   // column2
                   // Spacer(),
-                  
+
                   Column(
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -107,6 +115,7 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                             child: TextField(
+                              controller: emailController,
                               decoration: InputDecoration(
                                 hintText: 'Enter your email address',
                                 hintStyle: TextStyle(
@@ -150,6 +159,8 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                             child: TextField(
+                              controller: passwordController,
+                              obscureText: true,
                               decoration: InputDecoration(
                                 hintText: 'Enter your password',
                                 hintStyle: TextStyle(
@@ -172,6 +183,15 @@ class _LoginState extends State<Login> {
                       ),
                     ],
                   ),
+                  // error logic
+
+                   if (errorMessage != null) ...[
+                    SizedBox(height: 20),
+                    Text(
+                      errorMessage!,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ],
                   // column 7
                   SizedBox(
                     height: 220,
@@ -193,24 +213,24 @@ class _LoginState extends State<Login> {
                           // another text
                           Padding(padding: EdgeInsets.only(left: 10)),
                           GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Register(),
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Register(),
+                                ),
+                              );
+                            },
+                            child: Text(
+                              'Register',
+                              style: TextStyle(
+                                color: Color.fromRGBO(255, 255, 255, 1),
+                                fontFamily: 'Poppins-Regular',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
                               ),
-                            );
-                          },
-                          child: Text(
-                            'Register',
-                            style: TextStyle(
-                              color: Color.fromRGBO(255, 255, 255, 1),
-                              fontFamily: 'Poppins-Regular',
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
                             ),
                           ),
-                        ),
                         ],
                       ),
                     ],
@@ -226,12 +246,34 @@ class _LoginState extends State<Login> {
                           Padding(padding: EdgeInsets.only(left: 27)),
                           ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
+                              String email = emailController.text.trim();
+                              String password = passwordController.text.trim();
+                              bool userFound = false;
+
+                              // checking if user exist in registered lists
+
+                             for (var user in widget.registeredUsers) {
+                              if (user.email == email && user.password == password) {
+                                userFound = true;
+                                break;
+                                
+                              }
+                               
+                             }
+                             if (userFound) {
+                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => Job(),
                                 ),
                               );
+                             }else{
+                              setState(() {
+                                errorMessage = 'Invalid email or password. Please try again';
+                              });
+                             }
+
+                              
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color.fromRGBO(255, 255, 255, 1),
@@ -261,6 +303,7 @@ class _LoginState extends State<Login> {
                   ),
                 ],
               ),
+
             ),
           )),
     );

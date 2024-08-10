@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/job.dart';
 import 'package:joblistingapp/Screens/loginScreen.dart';
+import 'package:joblistingapp/models/regUser.dart';
 
 class Register extends StatefulWidget {
-  const Register({super.key});
+  const Register({Key? key}) : super(key: key);
 
   @override
   State<Register> createState() => _RegisterState();
@@ -11,11 +12,19 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   @override
+  TextEditingController fullNameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+
+
+  List<User> user = List.empty(growable: true);
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
         color: Color.fromRGBO(25, 23, 32, 1),
         child: Scrollbar(
           child: SingleChildScrollView(
@@ -66,10 +75,8 @@ class _RegisterState extends State<Register> {
                 ),
                 Column(
                   children: [
-                  
                     Row(
                       children: [
-                        
                         Padding(padding: EdgeInsets.only(left: 27)),
                         Text(
                           'Join the community!',
@@ -102,6 +109,7 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           child: TextField(
+                            controller: fullNameController,
                             decoration: InputDecoration(
                               hintText: 'Enter your full name',
                               hintStyle: TextStyle(
@@ -143,6 +151,7 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           child: TextField(
+                            controller: emailController,
                             decoration: InputDecoration(
                               hintText: 'Enter your email address',
                               hintStyle: TextStyle(
@@ -184,6 +193,8 @@ class _RegisterState extends State<Register> {
                             ),
                           ),
                           child: TextField(
+                            controller: passwordController,
+                              obscureText: true,
                             decoration: InputDecoration(
                               hintText: 'Enter your password',
                               hintStyle: TextStyle(
@@ -207,9 +218,10 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
-                SizedBox(
+               SizedBox(
                   height: 130,
                 ),
+                
                 Column(
                   children: [
                     Row(
@@ -230,7 +242,7 @@ class _RegisterState extends State<Register> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Login(),
+                                builder: (context) => Login(registeredUsers: user),
                               ),
                             );
                           },
@@ -256,12 +268,31 @@ class _RegisterState extends State<Register> {
                             padding: EdgeInsets.only(left: 27, bottom: 100)),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Job(),
-                              ),
-                            );
+                            String fullName = fullNameController.text.trim();
+                            String email = emailController.text.trim();
+                            String password = passwordController.text.trim();
+                            if (fullName.isNotEmpty &&
+                                email.isNotEmpty &&
+                                password.isNotEmpty) {
+                              setState(() {
+                                fullNameController.text = '';
+                                emailController.text = '';
+                                passwordController.text = '';
+                              });
+                              user.add((User(
+                                  fullName: fullName,
+                                  email: email,
+                                  password: password)));
+                              print('User add successsfully');
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Job(),
+                                ),
+                              );
+                            } 
+                            
+                            
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(255, 255, 255, 1),

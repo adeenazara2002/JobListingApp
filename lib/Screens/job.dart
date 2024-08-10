@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/adPosting.dart';
+import 'package:joblistingapp/widgets/jobList.dart';
 
 class Job extends StatefulWidget {
   const Job({super.key});
@@ -9,12 +10,14 @@ class Job extends StatefulWidget {
 }
 
 class _JobState extends State<Job> {
+  List<JobList> jobList = List.empty(growable: true);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: double.infinity,
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         color: Color.fromRGBO(25, 23, 32, 1),
         child: Scrollbar(
           child: SingleChildScrollView(
@@ -26,7 +29,6 @@ class _JobState extends State<Job> {
                     Padding(padding: EdgeInsets.only(left: 25)),
                     Column(
                       children: [
-                        // Spacer(),
                         Padding(padding: EdgeInsets.only(top: 80)),
                         SizedBox(
                           width: 80,
@@ -62,7 +64,7 @@ class _JobState extends State<Job> {
                         ),
                         // icon
                         Container(
-                          padding: EdgeInsets.only(left: 130,),
+                          padding: EdgeInsets.only(left: 130),
                           child: Icon(
                             Icons.arrow_circle_left_outlined,
                             color: Colors.white,
@@ -114,86 +116,18 @@ class _JobState extends State<Job> {
                               color: Color.fromRGBO(143, 143, 158, 1),
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ],
                 ),
-                // column4
-                SizedBox(height: 25),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 27)),
-                        // container 3
-                        Container(
-                          height: 100,
-                          width: 310,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(32, 30, 39, 1),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Color.fromRGBO(32, 30, 39, 1),
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Flutter Developer Required',
-                                      style: TextStyle(
-                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                        fontFamily: 'Poppins-Bold',
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Padding(padding: EdgeInsets.only(left: 20)),
-                                        Icon(
-                                          Icons.edit_note_outlined,
-                                          color: Colors.white,
-                                          size: 30,
-                                        ),
-                                        Padding(padding: EdgeInsets.only(left: 10)),
-                                        
-                                        Icon(
-                                          Icons.delete_outline_outlined,
-                                          color: Color.fromRGBO(255, 89, 89, 1),
-                                          size: 30,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                // SizedBox(height: 5),
-                                Text(
-                                  'Karachi, Pakistan',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(143, 143, 158, 1),
-                                    fontFamily: 'Poppins-Bold',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                // ==== LIST VIEW BUILDER ===
+                ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: jobList.length,
+                  itemBuilder: (context, index) => getColumn(index),
                 ),
-                // column5
-                // column2
               ],
             ),
           ),
@@ -225,6 +159,77 @@ class _JobState extends State<Job> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget getColumn(int index) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Padding(padding: EdgeInsets.only(left: 27)),
+            // container 3
+            Container(
+              height: 100,
+              width: 310,
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(32, 30, 39, 1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: Color.fromRGBO(32, 30, 39, 1),
+                ),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          jobList[index].title,
+                          style: TextStyle(
+                            color: Color.fromRGBO(255, 255, 255, 1),
+                            fontFamily: 'Poppins-Bold',
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left: 20)),
+                            Icon(
+                              Icons.edit_note_outlined,
+                              color: Colors.white,
+                              size: 30,
+                            ),
+                            Padding(padding: EdgeInsets.only(left: 10)),
+                            Icon(
+                              Icons.delete_outline_outlined,
+                              color: Color.fromRGBO(255, 89, 89, 1),
+                              size: 30,
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Text(
+                      jobList[index].location,
+                      style: TextStyle(
+                        color: Color.fromRGBO(143, 143, 158, 1),
+                        fontFamily: 'Poppins-Bold',
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
