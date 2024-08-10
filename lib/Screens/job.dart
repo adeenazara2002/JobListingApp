@@ -10,6 +10,7 @@ class Job extends StatefulWidget {
 }
 
 class _JobState extends State<Job> {
+
   List<JobList> jobList = List.empty(growable: true);
 
   @override

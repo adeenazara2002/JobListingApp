@@ -10,6 +10,9 @@ class AdPosting extends StatefulWidget {
 }
 
 class _AdPostingState extends State<AdPosting> {
+  TextEditingController positionController = TextEditingController();
+  TextEditingController descController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,6 +95,7 @@ class _AdPostingState extends State<AdPosting> {
                             ),
                           ),
                           child: TextField(
+                            controller: positionController,
                             decoration: InputDecoration(
                               hintText: 'Enter position name',
                               hintStyle: TextStyle(
@@ -131,6 +135,7 @@ class _AdPostingState extends State<AdPosting> {
                             ),
                           ),
                           child: TextField(
+                            controller: descController,
                             decoration: InputDecoration(
                               hintText: 'Describe Requirement..',
                               hintStyle: TextStyle(
