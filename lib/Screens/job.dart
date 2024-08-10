@@ -10,8 +10,13 @@ class Job extends StatefulWidget {
 }
 
 class _JobState extends State<Job> {
-
   List<JobList> jobList = List.empty(growable: true);
+
+  void addJob(JobList job) {
+    setState(() {
+      jobList.add(job);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -124,11 +129,14 @@ class _JobState extends State<Job> {
           ),
         ),
         child: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(
+          onPressed: () async {
+            final newJob = await Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => AdPosting()),
             );
+            if (newJob != null) {
+              addJob(newJob);
+            }
           },
           backgroundColor: Color.fromRGBO(229, 229, 229, 1),
           shape: CircleBorder(),

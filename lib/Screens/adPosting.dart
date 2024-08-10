@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:joblistingapp/Screens/adPosting2.dart';
-import 'package:joblistingapp/Screens/job.dart';
+import 'package:joblistingapp/models/jobList.dart';
 
 class AdPosting extends StatefulWidget {
   const AdPosting({super.key});
@@ -44,12 +43,7 @@ class _AdPostingState extends State<AdPosting> {
                               children: [
                                 InkWell(
                                   onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => Job(),
-                                      ),
-                                    );
+                                    Navigator.pop(context);
                                   },
                                   child: Icon(
                                     Icons.arrow_back_ios_sharp,
@@ -170,12 +164,13 @@ class _AdPostingState extends State<AdPosting> {
                             padding: EdgeInsets.only(left: 27, bottom: 100)),
                         ElevatedButton(
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Edit(),
-                              ),
-                            );
+                            String position = positionController.text.trim();
+                            String desc = descController.text.trim();
+                            if (position.isNotEmpty && desc.isNotEmpty) {
+                              JobList newJob =
+                                  JobList(position: position, desc: desc);
+                              Navigator.pop(context, newJob);
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(255, 255, 255, 1),
