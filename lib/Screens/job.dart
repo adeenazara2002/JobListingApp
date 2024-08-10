@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/adPosting.dart';
+import 'package:joblistingapp/models/jobList.dart';
 
 class Job extends StatefulWidget {
   const Job({super.key});
@@ -10,6 +11,7 @@ class Job extends StatefulWidget {
 
 class _JobState extends State<Job> {
   @override
+  List<JobList> jobList = List.empty(growable: true);
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
