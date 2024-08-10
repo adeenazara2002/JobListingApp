@@ -16,15 +16,13 @@ class _RegisterState extends State<Register> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-
-
   List<User> user = List.empty(growable: true);
 
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         color: Color.fromRGBO(25, 23, 32, 1),
         child: Scrollbar(
           child: SingleChildScrollView(
@@ -194,7 +192,7 @@ class _RegisterState extends State<Register> {
                           ),
                           child: TextField(
                             controller: passwordController,
-                              obscureText: true,
+                            obscureText: true,
                             decoration: InputDecoration(
                               hintText: 'Enter your password',
                               hintStyle: TextStyle(
@@ -218,10 +216,10 @@ class _RegisterState extends State<Register> {
                     ),
                   ],
                 ),
-               SizedBox(
+                SizedBox(
                   height: 130,
                 ),
-                
+
                 Column(
                   children: [
                     Row(
@@ -242,7 +240,8 @@ class _RegisterState extends State<Register> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Login(registeredUsers: user),
+                                builder: (context) =>
+                                    Login(registeredUsers: user),
                               ),
                             );
                           },
@@ -290,9 +289,7 @@ class _RegisterState extends State<Register> {
                                   builder: (context) => Job(),
                                 ),
                               );
-                            } 
-                            
-                            
+                            }
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color.fromRGBO(255, 255, 255, 1),

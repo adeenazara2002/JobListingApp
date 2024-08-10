@@ -14,8 +14,8 @@ class _EditState extends State<Edit> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         color: Color.fromRGBO(25, 23, 32, 1),
         child: Scrollbar(
             child: SingleChildScrollView(
@@ -39,20 +39,20 @@ class _EditState extends State<Edit> {
                           Row(
                             children: [
                               InkWell(
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => AdPosting(),
-                                      ),
-                                    );
-                                  },
-                                  child: Icon(
-                                    Icons.arrow_back_ios_sharp,
-                                    color: Color.fromRGBO(255, 255, 255, 1),
-                                    size: 30,
-                                  ),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => AdPosting(),
+                                    ),
+                                  );
+                                },
+                                child: Icon(
+                                  Icons.arrow_back_ios_sharp,
+                                  color: Color.fromRGBO(255, 255, 255, 1),
+                                  size: 30,
                                 ),
+                              ),
                               // Spacer(),
                               Padding(padding: EdgeInsets.only(top: 80)),
                               SizedBox(

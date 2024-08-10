@@ -6,7 +6,7 @@ import 'package:joblistingapp/models/regUser.dart';
 class Login extends StatefulWidget {
   final List<User> registeredUsers;
 
-  const Login({super.key , required this.registeredUsers});
+  const Login({super.key, required this.registeredUsers});
 
   @override
   State<Login> createState() => _LoginState();
@@ -22,8 +22,8 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           color: Color.fromRGBO(25, 23, 32, 1),
           child: Scrollbar(
             child: SingleChildScrollView(
@@ -185,7 +185,7 @@ class _LoginState extends State<Login> {
                   ),
                   // error logic
 
-                   if (errorMessage != null) ...[
+                  if (errorMessage != null) ...[
                     SizedBox(height: 20),
                     Text(
                       errorMessage!,
@@ -252,28 +252,26 @@ class _LoginState extends State<Login> {
 
                               // checking if user exist in registered lists
 
-                             for (var user in widget.registeredUsers) {
-                              if (user.email == email && user.password == password) {
-                                userFound = true;
-                                break;
-                                
+                              for (var user in widget.registeredUsers) {
+                                if (user.email == email &&
+                                    user.password == password) {
+                                  userFound = true;
+                                  break;
+                                }
                               }
-                               
-                             }
-                             if (userFound) {
-                               Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Job(),
-                                ),
-                              );
-                             }else{
-                              setState(() {
-                                errorMessage = 'Invalid email or password. Please try again';
-                              });
-                             }
-
-                              
+                              if (userFound) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Job(),
+                                  ),
+                                );
+                              } else {
+                                setState(() {
+                                  errorMessage =
+                                      'Invalid email or password. Please try again';
+                                });
+                              }
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Color.fromRGBO(255, 255, 255, 1),
@@ -303,7 +301,6 @@ class _LoginState extends State<Login> {
                   ),
                 ],
               ),
-
             ),
           )),
     );

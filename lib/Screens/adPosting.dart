@@ -14,8 +14,8 @@ class _AdPostingState extends State<AdPosting> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
         color: Color.fromRGBO(25, 23, 32, 1),
         child: Scrollbar(
           child: SingleChildScrollView(
