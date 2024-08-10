@@ -10,198 +10,106 @@ class Job extends StatefulWidget {
 }
 
 class _JobState extends State<Job> {
-  @override
   List<JobList> jobList = List.empty(growable: true);
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
         color: Color.fromRGBO(25, 23, 32, 1),
-        child: Scrollbar(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Row(
-                  // mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(padding: EdgeInsets.only(left: 25)),
-                    Column(
-                      children: [
-                        // Spacer(),
-                        Padding(padding: EdgeInsets.only(top: 80)),
-                        SizedBox(
-                          width: 80,
-                        ),
-                        Text(
-                          'Welcome',
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontFamily: 'Poppins-Regular',
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 25, top: 80),
+              child: Row(
+                children: [
+                  Text(
+                    'Welcome',
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontFamily: 'Poppins-Regular',
+                      fontSize: 18,
+                      fontWeight: FontWeight.w700,
                     ),
-                  ],
-                ),
-                // column2
-                Column(
-                  // crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 27)),
-                        Text(
-                          'Usama Khan',
-                          style: TextStyle(
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                            fontFamily: 'Poppins-Regular',
-                            fontSize: 25,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        // icon
-                        Container(
-                          padding: EdgeInsets.only(
-                            left: 130,
-                          ),
-                          child: Icon(
-                            Icons.arrow_circle_left_outlined,
-                            color: Colors.white,
-                            size: 30,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-                // column3
-                SizedBox(height: 20),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 27)),
-                        // container 3
-                        Container(
-                          height: 68,
-                          width: 310,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Color.fromRGBO(93, 93, 103, 1),
-                            ),
-                          ),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(
-                                Icons.search,
-                                color: Color.fromRGBO(93, 93, 103, 1),
-                                size: 30,
-                              ),
-                              hintText: 'Search keywords..',
-                              hintStyle: TextStyle(
-                                color: Color.fromRGBO(143, 143, 158, 1),
-                                fontFamily: 'Poppins-Regular',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              border: InputBorder.none,
-                              contentPadding: EdgeInsets.symmetric(
-                                vertical: 20.0,
-                                horizontal: 20.0,
-                              ),
-                            ),
-                            style: TextStyle(
-                              color: Color.fromRGBO(143, 143, 158, 1),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                // column4
-                SizedBox(height: 25),
-                Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(padding: EdgeInsets.only(left: 27)),
-                        // container 3
-                        Container(
-                          height: 100,
-                          width: 310,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(32, 30, 39, 1),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                              color: Color.fromRGBO(32, 30, 39, 1),
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(12.0),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      'Flutter Developer Required',
-                                      style: TextStyle(
-                                        color: Color.fromRGBO(255, 255, 255, 1),
-                                        fontFamily: 'Poppins-Bold',
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Padding(
-                                            padding: EdgeInsets.only(left: 20)),
-                                        Icon(
-                                          Icons.edit_note_outlined,
-                                          color: Colors.white,
-                                          size: 30,
-                                        ),
-                                        Padding(
-                                            padding: EdgeInsets.only(left: 10)),
-                                        Icon(
-                                          Icons.delete_outline_outlined,
-                                          color: Color.fromRGBO(255, 89, 89, 1),
-                                          size: 30,
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                // SizedBox(height: 5),
-                                Text(
-                                  'Karachi, Pakistan',
-                                  style: TextStyle(
-                                    color: Color.fromRGBO(143, 143, 158, 1),
-                                    fontFamily: 'Poppins-Bold',
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
-                // column5
-                // column2
-              ],
+                  ),
+                ],
+              ),
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.only(left: 27, top: 10),
+              child: Row(
+                children: [
+                  Text(
+                    'Usama Khan',
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontFamily: 'Poppins-Regular',
+                      fontSize: 25,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.arrow_circle_left_outlined,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 27, top: 20),
+              child: Container(
+                height: 68,
+                width: 310,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: Color.fromRGBO(93, 93, 103, 1),
+                  ),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(
+                      Icons.search,
+                      color: Color.fromRGBO(93, 93, 103, 1),
+                      size: 30,
+                    ),
+                    hintText: 'Search keywords..',
+                    hintStyle: TextStyle(
+                      color: Color.fromRGBO(143, 143, 158, 1),
+                      fontFamily: 'Poppins-Regular',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.symmetric(
+                      vertical: 20.0,
+                      horizontal: 20.0,
+                    ),
+                  ),
+                  style: TextStyle(
+                    color: Color.fromRGBO(143, 143, 158, 1),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 25),
+            jobList.isEmpty
+                ? const Text(
+                    'No jobs yet...',
+                    style: TextStyle(
+                        fontSize: 22, color: Color.fromRGBO(143, 143, 158, 1)),
+                  )
+                : Expanded(
+                    child: ListView.builder(
+                      itemCount: jobList.length,
+                      itemBuilder: (context, index) => getRow(index),
+                    ),
+                  ),
+          ],
         ),
       ),
       floatingActionButton: Container(
@@ -227,6 +135,69 @@ class _JobState extends State<Job> {
             Icons.add_sharp,
             size: 30,
             color: Color.fromRGBO(25, 23, 32, 1),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget getRow(int index) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 27, top: 10),
+      child: Container(
+        height: 100,
+        width: 310,
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(32, 30, 39, 1),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: Color.fromRGBO(32, 30, 39, 1),
+          ),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    jobList[index].position,
+                    style: TextStyle(
+                      color: Color.fromRGBO(255, 255, 255, 1),
+                      fontFamily: 'Poppins-Bold',
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.edit_note_outlined,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                      SizedBox(width: 10),
+                      Icon(
+                        Icons.delete_outline_outlined,
+                        color: Color.fromRGBO(255, 89, 89, 1),
+                        size: 30,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Text(
+                jobList[index].desc,
+                style: TextStyle(
+                  color: Color.fromRGBO(143, 143, 158, 1),
+                  fontFamily: 'Poppins-Bold',
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ],
           ),
         ),
       ),
