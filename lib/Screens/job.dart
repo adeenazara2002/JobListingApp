@@ -182,17 +182,29 @@ class _JobState extends State<Job> {
                   ),
                   Row(
                     children: [
-                      Icon(
-                        Icons.edit_note_outlined,
-                        color: Colors.white,
-                        size: 30,
+                      InkWell(
+                        onTap: () {},
+                        child: const Icon(
+                          Icons.edit_note_outlined,
+                          color: Colors.white,
+                          size: 30,
+                        ),
                       ),
-                      SizedBox(width: 10),
-                      Icon(
-                        Icons.delete_outline_outlined,
-                        color: Color.fromRGBO(255, 89, 89, 1),
-                        size: 30,
+                      SizedBox(
+                        width: 10,
                       ),
+                      InkWell(
+                        onTap: () {
+                          setState(() {
+                            jobList.removeAt(index);
+                          });
+                        },
+                        child: const Icon(
+                          Icons.delete_outline_outlined,
+                          color: Color.fromRGBO(255, 89, 89, 1),
+                          size: 30,
+                        ),
+                      )
                     ],
                   ),
                 ],
