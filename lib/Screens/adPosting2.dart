@@ -1,16 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:joblistingapp/Screens/adPosting.dart';
+import 'package:joblistingapp/models/jobList.dart';
 
 class Edit extends StatefulWidget {
-  const Edit({super.key});
+  final JobList job;
+  final Function(JobList) onUpdate;
+  const Edit({super.key, required this.job, required this.onUpdate});
 
   @override
   State<Edit> createState() => _EditState();
 }
 
 class _EditState extends State<Edit> {
+  late TextEditingController positionController;
+  late TextEditingController descController;
+
   @override
+  void initState() {
+    super.initState();
+    positionController = TextEditingController(text: widget.job.position);
+    descController = TextEditingController(text: widget.job.desc);
+  }
+
+  @override
+  void dispose() {
+    positionController.dispose();
+    descController.dispose();
+    super.dispose();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -98,6 +117,7 @@ class _EditState extends State<Edit> {
                           ),
                         ),
                         child: TextField(
+                          controller: positionController,
                           decoration: InputDecoration(
                             hintText: '',
                             hintStyle: TextStyle(
@@ -143,6 +163,7 @@ class _EditState extends State<Edit> {
                           ),
                         ),
                         child: TextField(
+                          controller: descController,
                           decoration: InputDecoration(
                             hintText: '',
                             hintStyle: TextStyle(
@@ -178,7 +199,16 @@ class _EditState extends State<Edit> {
                     children: [
                       Padding(padding: EdgeInsets.only(left: 27, bottom: 100)),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          String position = positionController.text.trim();
+                          String desc = descController.text.trim();
+                          if (position.isNotEmpty && desc.isNotEmpty) {
+                            JobList updatedJob =
+                                JobList(position: position, desc: desc);
+                            widget.onUpdate(updatedJob);
+                            Navigator.pop(context);
+                          }
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                           foregroundColor: Color.fromRGBO(25, 23, 32, 1),

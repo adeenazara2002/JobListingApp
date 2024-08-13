@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:joblistingapp/Screens/adPosting.dart';
+import 'package:joblistingapp/Screens/adPosting2.dart';
 import 'package:joblistingapp/models/jobList.dart';
 
 class Job extends StatefulWidget {
@@ -183,7 +184,22 @@ class _JobState extends State<Job> {
                   Row(
                     children: [
                       InkWell(
-                        onTap: () {},
+                        onTap: () async {
+                          JobList selectedJob = jobList[index];
+                          final updatedJob = await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Edit(
+                                job: selectedJob,
+                                onUpdate: (JobList updatedJob) {
+                                  setState(() {
+                                    jobList[index] = updatedJob;
+                                  });
+                                },
+                              ),
+                            ),
+                          );
+                        },
                         child: const Icon(
                           Icons.edit_note_outlined,
                           color: Colors.white,
