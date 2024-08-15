@@ -204,7 +204,7 @@ class _EditState extends State<Edit> {
                           String desc = descController.text.trim();
                           if (position.isNotEmpty && desc.isNotEmpty) {
                             JobList updatedJob =
-                                JobList(position: position, desc: desc);
+                                JobList(position: position, desc: desc , location: 'Karachi, Pakistan');
                             widget.onUpdate(updatedJob);
                             Navigator.pop(context);
                           }

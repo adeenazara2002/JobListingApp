@@ -4,7 +4,8 @@ import 'package:joblistingapp/Screens/adPosting2.dart';
 import 'package:joblistingapp/Screens/regScreen.dart';
 import 'package:joblistingapp/Screens/loginScreen.dart';
 import 'package:joblistingapp/Screens/job.dart';
-void main(){
+
+void main() {
   runApp(const JobListing());
 }
 
@@ -13,9 +14,6 @@ class JobListing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Job()
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: Register());
   }
 }
